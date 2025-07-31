@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_new_flutterapp/views/pages/widget_tree.dart';
-import 'package:my_new_flutterapp/views/widgets/hero_widget.dart';
+import 'package:lottie/lottie.dart';
 
 class WelcomePage extends StatelessWidget {
   const WelcomePage({super.key});
@@ -13,7 +13,19 @@ class WelcomePage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const HeroWidget(),
+            // Load a Lottie file from your assets
+            Lottie.asset('assets/lotties/welcome.json'),
+            //Login Text
+            const Text(
+              'Consonant App',
+              style: TextStyle(
+                fontSize: 50.0,
+                fontWeight: FontWeight.bold,
+                letterSpacing: 3.0,
+              ),
+            ),
+
+            //Login Button
             FilledButton(
               onPressed: () {
                 Navigator.pushReplacement(

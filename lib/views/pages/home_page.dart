@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_new_flutterapp/data/constants.dart';
 import 'package:my_new_flutterapp/views/widgets/hero_widget.dart';
 
 class HomePage extends StatelessWidget {
@@ -22,13 +23,12 @@ class HomePage extends StatelessWidget {
                   children: [
                     Text(
                       'Basic Layout',
-                      style: TextStyle(
-                        color: Colors.teal,
-                        fontSize: 18.0,
-                        fontWeight: FontWeight.bold,
-                      ),
+                      style: MyTextStyle.titleText,
                     ),
-                    Text('The description here'),
+                    Text(
+                      'The description here',
+                      style: MyTextStyle.descriptionText,
+                    ),
                   ],
                 ),
               ),
