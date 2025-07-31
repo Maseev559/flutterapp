@@ -9,7 +9,11 @@ class HeroWidget extends StatelessWidget {
       tag: 'Heo1',
       child: ClipRRect(
         borderRadius: BorderRadius.circular(20.0),
-        child: Image.asset('assets/images/newbg.jpg'),
+        child: Image.asset(
+          'assets/images/newbg.jpg',
+          color: Colors.teal,
+          colorBlendMode: BlendMode.darken,
+        ),
       ),
     );
   }

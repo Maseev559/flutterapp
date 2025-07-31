@@ -123,7 +123,18 @@ class _SettingsPageState extends State<SettingsPage> {
                 title: const Text('Don\'t break the code!'),
               ),
               //   Divider(),
-              Divider(),
+              const Divider(
+                thickness: 2.0,
+                color: Colors.teal,
+                endIndent: 150.0,
+              ),
+              // Container(
+              //   height: 150.0,
+              //   child: VerticalDivider(
+              //     thickness: 2.0,
+              //     color: Colors.teal,
+              //   ),
+              // ),
               //Slider
               Slider.adaptive(
                 max: 100,
@@ -156,15 +167,51 @@ class _SettingsPageState extends State<SettingsPage> {
                 child: Image.asset('assets/images/bg-1.jpg'),
               ),
 
-              //Buttons
+              //SnackBar Button
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color.fromARGB(255, 255, 61, 7),
+                  backgroundColor: const Color.fromARGB(255, 44, 7, 255),
                   foregroundColor: Colors.white,
                 ),
-                onPressed: () {},
-                child: Text('CLICK ME'),
+                onPressed: () {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text('Snackbar go far'),
+                      duration: Duration(seconds: 5),
+                      behavior: SnackBarBehavior.floating,
+                    ),
+                  );
+                },
+                child: Text('Open Snackbar Button'),
               ),
+              //Alert Button
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color.fromARGB(255, 44, 7, 255),
+                  foregroundColor: Colors.white,
+                ),
+                onPressed: () {
+                  showDialog(
+                    context: context,
+                    builder: (context) {
+                      return AlertDialog.adaptive(
+                        title: Text('Alert  Title'),
+                        content: Text('Alert Content'),
+                        actions: [
+                          FilledButton(
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                            child: Text('Close'),
+                          ),
+                        ],
+                      );
+                    },
+                  );
+                },
+                child: Text('Open Dialogue'),
+              ),
+              //Buttons
               OutlinedButton(
                 onPressed: () {},
                 child: Text('CLICK ME'),

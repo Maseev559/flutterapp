@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:my_new_flutterapp/views/pages/settings_page.dart';
 import 'package:my_new_flutterapp/views/pages/widget_tree.dart';
 import 'package:my_new_flutterapp/views/widgets/hero_widget.dart';
 
@@ -14,14 +13,14 @@ class WelcomePage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            HeroWidget(),
+            const HeroWidget(),
             FilledButton(
               onPressed: () {
                 Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
                     builder: (context) {
-                      return WidgetTree();
+                      return const WidgetTree();
                     },
                   ),
                 );

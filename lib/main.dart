@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_new_flutterapp/data/notifiers.dart';
 import 'package:my_new_flutterapp/views/pages/welcome_page.dart';
-import 'package:my_new_flutterapp/views/pages/widget_tree.dart';
 
 void main() {
   runApp(const MyApp());
