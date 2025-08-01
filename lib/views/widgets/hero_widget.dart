@@ -18,7 +18,7 @@ class HeroWidget extends StatelessWidget {
             child: Image.asset(
               'assets/images/newbg.jpg',
               // color: Colors.teal,
-              //   colorBlendMode: BlendMode.darken,
+              // colorBlendMode: BlendMode.darken,
             ),
           ),
         ),
