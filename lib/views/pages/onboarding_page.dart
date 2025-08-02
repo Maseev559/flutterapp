@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-import 'package:my_new_flutterapp/views/widgets/hero_widget.dart';
+import 'package:my_new_flutterapp/data/constants.dart';
+import 'package:my_new_flutterapp/views/pages/login_page.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({
-    super.key,
-    required this.title,
-  });
-  final String title;
+class OnboardingPage extends StatelessWidget {
+  const OnboardingPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,16 +16,17 @@ class LoginPage extends StatelessWidget {
           children: [
             //Lottie
             Lottie.asset(
-              'assests/lotties/home3d.json',
+              'assets/lotties/home3d.json',
               height: 400,
             ),
-            //HeroWidget
-            HeroWidget(title: title),
             // Email Sizedbox
             SizedBox(
               height: 20.0,
             ),
-
+            const Text(
+              'Welcome, this is the onboarding screen, you need to accept with our terms and conditions.',
+              style: MyTextStyle.descriptionText,
+            ),
             //sizedbox
             SizedBox(height: 10.0),
             //Login Button
@@ -38,7 +36,9 @@ class LoginPage extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (context) {
-                      return LoginPage(title: title);
+                      return LoginPage(
+                        title: 'Login',
+                      );
                     },
                   ),
                 );
@@ -46,7 +46,7 @@ class LoginPage extends StatelessWidget {
               style: FilledButton.styleFrom(
                 minimumSize: Size(double.infinity, 45.0),
               ),
-              child: Text('Login'),
+              child: Text('Get Started'),
             ),
           ],
         ),

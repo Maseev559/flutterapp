@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:my_new_flutterapp/views/pages/widget_tree.dart';
-import 'package:my_new_flutterapp/views/widgets/hero_widget.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({
@@ -38,66 +37,67 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: Padding(
-        padding: EdgeInsets.all(20.0),
-        child: Column(
-          children: [
-            //Lottie
-            Lottie.asset(
-              'assests/lotties/home3d.json',
-              height: 400,
-            ),
-            //HeroWidget
-            HeroWidget(title: widget.title),
-            // Email Sizedbox
-            SizedBox(
-              height: 20.0,
-            ),
-            //Textfield
-            TextField(
-              controller: controllerEmail,
-              decoration: InputDecoration(
-                hintText: 'Email',
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(45.0),
-                ),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.all(20.0),
+          child: Column(
+            children: [
+              //Lottie
+              Lottie.asset(
+                'assets/lotties/home3d.json',
+                height: 400,
               ),
-              onEditingComplete: () {
-                setState(() {});
-              },
-            ),
 
-            // Password Sizedbox
-            SizedBox(
-              height: 10.0,
-            ),
-            //Textfield
-            TextField(
-              controller: controllerPassword,
-              decoration: InputDecoration(
-                hintText: 'Password',
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(45.0),
+              // Email Sizedbox
+              SizedBox(
+                height: 20.0,
+              ),
+              //Textfield
+              TextField(
+                controller: controllerEmail,
+                decoration: InputDecoration(
+                  hintText: 'Email',
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(45.0),
+                  ),
                 ),
+                onEditingComplete: () {
+                  setState(() {});
+                },
               ),
-              onEditingComplete: () {
-                setState(() {});
-              },
-            ),
 
-            //sizedbox
-            SizedBox(height: 10.0),
-            //Login Button
-            FilledButton(
-              onPressed: () {
-                correctDetails();
-              },
-              style: FilledButton.styleFrom(
-                minimumSize: Size(double.infinity, 45.0),
+              // Password Sizedbox
+              SizedBox(
+                height: 10.0,
               ),
-              child: Text('Login'),
-            ),
-          ],
+              //Textfield
+              TextField(
+                controller: controllerPassword,
+                decoration: InputDecoration(
+                  hintText: 'Password',
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(45.0),
+                  ),
+                ),
+                onEditingComplete: () {
+                  setState(() {});
+                },
+              ),
+
+              //sizedbox
+              SizedBox(height: 10.0),
+              //Login Button
+              FilledButton(
+                onPressed: () {
+                  correctDetails();
+                },
+                style: FilledButton.styleFrom(
+                  minimumSize: Size(double.infinity, 45.0),
+                ),
+                child: Text('Login'),
+              ),
+            ],
+          ),
         ),
       ),
     );
