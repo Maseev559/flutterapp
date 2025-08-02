@@ -24,7 +24,7 @@ class HeroWidget extends StatelessWidget {
         ),
         Text(
           title,
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 30.0,
             fontWeight: FontWeight.w500,
             letterSpacing: 4.0,

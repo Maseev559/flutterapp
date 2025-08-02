@@ -16,7 +16,7 @@ class OnboardingPage extends StatelessWidget {
           children: [
             //Lottie
             Lottie.asset(
-              'assets/lotties/home3d.json',
+              'assets/lotties/hi.json',
               height: 400,
             ),
             // Email Sizedbox
