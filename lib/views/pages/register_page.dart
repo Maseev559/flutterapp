@@ -14,8 +14,8 @@ class RegisterPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<RegisterPage> {
-  TextEditingController controllerEmail = TextEditingController();
-  TextEditingController controllerPassword = TextEditingController();
+  TextEditingController controllerEmail = TextEditingController(text: '123');
+  TextEditingController controllerPassword = TextEditingController(text: '456');
   String correctEmail = '123';
   String correctPassword = '456';
   // @override
@@ -109,7 +109,7 @@ class _LoginPageState extends State<RegisterPage> {
         ),
       );
     } else {
-      print('Wrong username or passwo6d');
+      print('Wrong username or password');
     }
   }
 }

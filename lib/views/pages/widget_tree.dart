@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:my_new_flutterapp/data/constants.dart';
 import 'package:my_new_flutterapp/data/notifiers.dart';
 import 'package:my_new_flutterapp/views/pages/home_page.dart';
 import 'package:my_new_flutterapp/views/pages/profile_page.dart';
 import 'package:my_new_flutterapp/views/pages/settings_page.dart';
 import 'package:my_new_flutterapp/views/widgets/navbar_widget.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 List<Widget> pages = [
   HomePage(),
@@ -16,7 +18,7 @@ class WidgetTree extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     //Title
-    String appTitle = 'Curcryptos';
+    String appTitle = 'Consonant';
     return Scaffold(
       //AppBar
       appBar: AppBar(
@@ -25,7 +27,13 @@ class WidgetTree extends StatelessWidget {
         //Action Button for Light/Dark Mode
         actions: [
           IconButton(
-            onPressed: () {
+            onPressed: () async {
+              isDarkModeNotifier.value = !isDarkModeNotifier.value;
+              // Obtain shared preferences.
+              final SharedPreferences prefs =
+                  await SharedPreferences.getInstance();
+              await prefs.setBool(
+                  themeConstant.themeModeKey, isDarkModeNotifier.value);
               isDarkModeNotifier.value = !isDarkModeNotifier.value;
             },
             icon: ValueListenableBuilder(

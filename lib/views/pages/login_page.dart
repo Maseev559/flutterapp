@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'package:my_new_flutterapp/views/pages/widget_tree.dart';
 import 'package:my_new_flutterapp/views/widgets/hero_widget.dart';
 
@@ -41,6 +42,11 @@ class _LoginPageState extends State<LoginPage> {
         padding: EdgeInsets.all(20.0),
         child: Column(
           children: [
+            //Lottie
+            Lottie.asset(
+              'assests/lotties/home3d.json',
+              height: 400,
+            ),
             //HeroWidget
             HeroWidget(title: widget.title),
             // Email Sizedbox
@@ -100,16 +106,17 @@ class _LoginPageState extends State<LoginPage> {
   void correctDetails() {
     if (correctEmail == controllerEmail.text &&
         correctPassword == controllerPassword.text) {
-      Navigator.push(
+      Navigator.pushAndRemoveUntil(
         context,
         MaterialPageRoute(
           builder: (context) {
             return const WidgetTree();
           },
         ),
+        (route) => false,
       );
     } else {
-      print('Wrong username or passwo6d');
+      print('Wrong username or password');
     }
   }
 }
