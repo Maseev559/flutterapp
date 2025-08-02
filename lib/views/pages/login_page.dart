@@ -38,9 +38,7 @@ class _LoginPageState extends State<LoginPage> {
         child: Column(
           children: [
             //HeroWidget
-            HeroWidget(
-              title: 'Login ',
-            ),
+            HeroWidget(title: 'Login '),
             // Email Sizedbox
             SizedBox(
               height: 20.0,
@@ -78,18 +76,16 @@ class _LoginPageState extends State<LoginPage> {
             ),
 
             //sizedbox
-            SizedBox(
-              height: 10.0,
-            ),
+            SizedBox(height: 10.0),
             //Login Button
             FilledButton(
               onPressed: () {
                 correctDetails();
               },
-              child: const Text('Login'),
               style: FilledButton.styleFrom(
                 minimumSize: Size(double.infinity, 45.0),
               ),
+              child: Text('Login'),
             ),
           ],
         ),
@@ -98,9 +94,9 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   void correctDetails() {
-    if (correctEmail == controllerEmail &&
-        correctPassword == controllerPassword) {
-      Navigator.pushReplacement(
+    if (correctEmail == controllerEmail.text &&
+        correctPassword == controllerPassword.text) {
+      Navigator.push(
         context,
         MaterialPageRoute(
           builder: (context) {
@@ -108,8 +104,6 @@ class _LoginPageState extends State<LoginPage> {
           },
         ),
       );
-    } else {
-      print('Wrong Email or Password');
     }
   }
 }
