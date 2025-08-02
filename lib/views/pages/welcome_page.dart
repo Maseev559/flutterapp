@@ -15,7 +15,7 @@ class WelcomePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             // Load a Lottie file from your assets
-            Lottie.asset('assets/lotties/welcome.json'),
+            Lottie.asset('assets/lotties/welcome.json', height: 400.0),
             //Fitted Box for Login
             const FittedBox(
               child: Text(
@@ -36,7 +36,7 @@ class WelcomePage extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (context) {
-                      return const RegisterPage();
+                      return const RegisterPage(title: 'Register');
                     },
                   ),
                 );
@@ -53,7 +53,9 @@ class WelcomePage extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (context) {
-                      return const LoginPage();
+                      return const LoginPage(
+                        title: 'Login',
+                      );
                     },
                   ),
                 );

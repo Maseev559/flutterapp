@@ -3,7 +3,11 @@ import 'package:my_new_flutterapp/views/pages/widget_tree.dart';
 import 'package:my_new_flutterapp/views/widgets/hero_widget.dart';
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+  const LoginPage({
+    super.key,
+    required this.title,
+  });
+  final String title;
 
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -38,7 +42,7 @@ class _LoginPageState extends State<LoginPage> {
         child: Column(
           children: [
             //HeroWidget
-            HeroWidget(title: 'Login '),
+            HeroWidget(title: widget.title),
             // Email Sizedbox
             SizedBox(
               height: 20.0,
@@ -104,6 +108,8 @@ class _LoginPageState extends State<LoginPage> {
           },
         ),
       );
+    } else {
+      print('Wrong username or passwo6d');
     }
   }
 }
