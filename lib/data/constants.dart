@@ -16,4 +16,9 @@ class MyTextStyle {
   );
 }
 
-class MyValue {}
+class MyValue {
+  static const String basicLayout = 'Basic Lay';
+  static const String basicLayout1 = 'Basic Laying';
+  static const String basicLayout2 = 'Basic Layout';
+  static const String basicLayout3 = 'Basic Layouts';
+}

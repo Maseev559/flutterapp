@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_new_flutterapp/data/constants.dart';
 import 'package:my_new_flutterapp/views/widgets/container_widget.dart';
 import 'package:my_new_flutterapp/views/widgets/hero_widget.dart';
 
@@ -7,6 +8,12 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    List<String> list = [
+      MyValue.basicLayout,
+      MyValue.basicLayout1,
+      MyValue.basicLayout2,
+      MyValue.basicLayout3,
+    ];
     return SingleChildScrollView(
       child: Padding(
         padding: EdgeInsets.all(20.0),
@@ -19,24 +26,24 @@ class HomePage extends StatelessWidget {
             //Container from container_widget.dart
             //Container shortcut
             ...List.generate(
-              3,
+              4,
               (index) {
-                return const ContainerWidget(
-                  title: 'Basic Layout',
+                return ContainerWidget(
+                  title: list.elementAt(index),
                   description: 'This is a normal description',
                 );
               },
             ),
             //List long process
 
-            const ContainerWidget(
-              title: 'Basic Layout',
-              description: 'This is a normal description',
-            ),
-            const ContainerWidget(
-              title: 'Basic Layout',
-              description: 'This is a normal description',
-            ),
+            // const ContainerWidget(
+            //   title: 'Basic Layout',
+            //   description: 'This is a normal description',
+            // ),
+            // const ContainerWidget(
+            //   title: 'Basic Layout',
+            //   description: 'This is a normal description',
+            // ),
           ],
         ),
       ),
