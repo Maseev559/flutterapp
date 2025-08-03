@@ -21,4 +21,6 @@ class MyValue {
   static const String basicLayout1 = 'Basic Laying';
   static const String basicLayout2 = 'Basic Layout';
   static const String basicLayout3 = 'Basic Layouts';
+  static const String basicLayout4 = 'Bas Layouts';
+  static const String basicLayout5 = 'Basic New Layouts';
 }

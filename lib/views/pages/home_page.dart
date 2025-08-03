@@ -14,12 +14,17 @@ class HomePage extends StatelessWidget {
       MyValue.basicLayout1,
       MyValue.basicLayout2,
       MyValue.basicLayout3,
+      MyValue.basicLayout4,
+      MyValue.basicLayout5,
     ];
     return SingleChildScrollView(
       child: Padding(
         padding: EdgeInsets.all(20.0),
         child: Column(
           children: [
+            SizedBox(
+              height: 10.0,
+            ),
             HeroWidget(
               title: 'Home',
               nextPage: CoursePage(),
@@ -28,7 +33,7 @@ class HomePage extends StatelessWidget {
             //Container from container_widget.dart
             //Container shortcut
             ...List.generate(
-              4,
+              6,
               (index) {
                 return ContainerWidget(
                   title: list.elementAt(index),
