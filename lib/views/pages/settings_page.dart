@@ -184,6 +184,14 @@ class _SettingsPageState extends State<SettingsPage> {
                 },
                 child: Text('Open Snackbar Button'),
               ),
+              // Copied Button
+              FilledButton(
+                  onPressed: () {}, child: const Text('Filled Button')),
+              //To add Icon
+              FilledButton.icon(
+                  onPressed: () {},
+                  icon: const Icon(Icons.attach_file),
+                  label: const Text('Attach')),
               //Alert Button
               ElevatedButton(
                 style: ElevatedButton.styleFrom(

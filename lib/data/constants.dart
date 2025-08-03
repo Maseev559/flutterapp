@@ -15,3 +15,5 @@ class MyTextStyle {
     fontSize: 16.0,
   );
 }
+
+class MyValue {}

@@ -15,23 +15,25 @@ class HomePage extends StatelessWidget {
             HeroWidget(
               title: 'Home',
             ),
-            ContainerWidget(
+
+            //Container from container_widget.dart
+            //Container shortcut
+            ...List.generate(
+              3,
+              (index) {
+                return const ContainerWidget(
+                  title: 'Basic Layout',
+                  description: 'This is a normal description',
+                );
+              },
+            ),
+            //List long process
+
+            const ContainerWidget(
               title: 'Basic Layout',
               description: 'This is a normal description',
             ),
-            ContainerWidget(
-              title: 'Basic Layout',
-              description: 'This is a normal description',
-            ),
-            ContainerWidget(
-              title: 'Basic Layout',
-              description: 'This is a normal description',
-            ),
-            ContainerWidget(
-              title: 'Basic Layout',
-              description: 'This is a normal description',
-            ),
-            ContainerWidget(
+            const ContainerWidget(
               title: 'Basic Layout',
               description: 'This is a normal description',
             ),
