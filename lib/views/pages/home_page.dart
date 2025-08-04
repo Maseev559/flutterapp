@@ -22,9 +22,6 @@ class HomePage extends StatelessWidget {
         padding: EdgeInsets.all(20.0),
         child: Column(
           children: [
-            SizedBox(
-              height: 10.0,
-            ),
             HeroWidget(
               title: 'Home',
               nextPage: CoursePage(),
